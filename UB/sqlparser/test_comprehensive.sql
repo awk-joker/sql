@@ -1,0 +1,18 @@
+SELECT * FROM users;
+SELECT name, age FROM users WHERE age > 18;
+INSERT INTO users (name, age) VALUES ('John', 25);
+UPDATE users SET name = 'Jane' WHERE id = 1;
+CREATE TABLE students (id INT, name VARCHAR(50), age INT);
+SELECT aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa FROM t;
+SELECT * FROM users WHERE age > 18 AND age < 30 AND name = 'John';
+CREATE TABLE test (id INT NOT NULL, name VARCHAR(100));
+SELECT * FROM users WHERE name = 'John@#$';
+SELECT u.name, u.age FROM users AS u WHERE u.age > 18;
+SELECT name AS username FROM users;
+SELECT DISTINCT name, age FROM users WHERE age > 18 ORDER BY age DESC LIMIT 10;
+SELECT COUNT(*) FROM orders WHERE total > 100;
+SELECT SUM(price), AVG(quantity) FROM products WHERE category = 'electronics';
+SELECT * FROM customers WHERE name LIKE 'A%';
+SELECT * FROM employees WHERE salary BETWEEN 5000 AND 10000;
+SELECT * FROM posts WHERE status = 'active' ORDER BY created_at DESC;
+SELECT SUM(price) AS total_products_value, AVG(quantity) AS average_stock_quantity, COUNT(*) AS total_products_count, MIN(price) AS min_product_price, MAX(price) AS max_product_price, SUM(price * quantity) AS total_inventory_value, SUM(CASE WHEN price > 1000 THEN 1 ELSE 0 END) AS high_value_products_count, SUM(CASE WHEN quantity < 10 THEN price * quantity ELSE 0 END) AS low_stock_inventory_value, AVG(COALESCE(quantity, 0)) AS avg_quantity_with_nulls_handled, ROUND(SUM(price) / (SELECT SUM(price) FROM products) * 100, 2) AS electronics_value_percentage, ROUND(STDDEV(price), 2) AS price_standard_deviation, ROUND(VARIANCE(price), 2) AS price_variance FROM products WHERE category = 'electronics' AND is_active = 1 AND created_at >= DATE_SUB(CURRENT_DATE(), INTERVAL 1 YEAR) AND price > 0 GROUP BY category, YEAR(created_at) HAVING SUM(price) > 10000 AND AVG(quantity) >= 5 ORDER BY total_inventory_value DESC LIMIT 10;

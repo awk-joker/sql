@@ -1,0 +1,16 @@
+SELECT name, age FROM users;
+SELECT * FROM employees WHERE salary > 5000;
+SELECT COUNT(*) FROM orders;
+SELECT name AS username FROM users;
+SELECT * FROM users LEFT JOIN departments ON users.dept_id = departments.id;
+SELECT * FROM users WHERE age BETWEEN 18 AND 65;
+SELECT * FROM users WHERE name LIKE 'John%';
+SELECT * FROM users WHERE NOT age > 18;
+SELECT * FROM users LIMIT 10;
+SELECT * FROM users LIMIT 5, 10;
+INSERT INTO users (name, age) VALUES ('John', 25);
+UPDATE users SET age = 26 WHERE id = 1;
+DELETE FROM users WHERE age < 18;
+CREATE TABLE users (id INT, name VARCHAR(100), age INT NOT NULL);
+DROP TABLE users;
+SHOW TABLES;
